@@ -39,6 +39,13 @@ public class mainform extends javax.swing.JFrame {
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jScrollPane9 = new javax.swing.JScrollPane();
         txList1 = new javax.swing.JList<>();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         txPanel = new javax.swing.JPanel();
         tximgPane = new javax.swing.JTabbedPane();
         tximgPanel = new javax.swing.JPanel();
@@ -58,7 +65,12 @@ public class mainform extends javax.swing.JFrame {
         settings_fldigidefaulthost = new javax.swing.JTextField();
         settings_fldigidefaultport = new javax.swing.JTextField();
         settings_editdefaultfldigi = new javax.swing.JToggleButton();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jTextField5 = new javax.swing.JTextField();
         settings_aprsPanel = new javax.swing.JPanel();
+        settings_iAPRSserver = new javax.swing.JTextField();
+        settings_iAPRSport = new javax.swing.JTextField();
+        settings_editdefaultfldigi1 = new javax.swing.JToggleButton();
         settings_modesPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -138,22 +150,90 @@ public class mainform extends javax.swing.JFrame {
         txList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane9.setViewportView(txList1);
 
+        jCheckBox2.setText("enable RSID");
+        jCheckBox2.setContentAreaFilled(false);
+        jCheckBox2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-out.png"))); // NOI18N
+        jCheckBox2.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-in.png"))); // NOI18N
+        jCheckBox2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-in.png"))); // NOI18N
+
+        jCheckBox3.setText("respect Mode in HeaderData");
+
+        jTabbedPane3.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 444, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 582, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("Image reception", new javax.swing.ImageIcon(getClass().getResource("/jssdv/file-picture.png")), jPanel4); // NOI18N
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "NOCALL"));
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Image-Blocks"));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 302, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("raw image", new javax.swing.ImageIcon(getClass().getResource("/jssdv/puzzle.png")), jPanel6); // NOI18N
+
         javax.swing.GroupLayout rxPanelLayout = new javax.swing.GroupLayout(rxPanel);
         rxPanel.setLayout(rxPanelLayout);
         rxPanelLayout.setHorizontalGroup(
             rxPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rxPanelLayout.createSequentialGroup()
-                .addGroup(rxPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTabbedPane2)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 469, Short.MAX_VALUE))
+                .addGroup(rxPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rxPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTabbedPane2)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rxPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jCheckBox2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane3)
+                .addContainerGap())
         );
         rxPanelLayout.setVerticalGroup(
             rxPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rxPanelLayout.createSequentialGroup()
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(rxPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(rxPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane3)
+                .addContainerGap())
         );
 
         topPane.addTab("RX                                             .", new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-in.png")), rxPanel); // NOI18N
@@ -326,17 +406,33 @@ public class mainform extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox4.setText("autolog on reception");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+
+        jTextField5.setText("75");
+        jTextField5.setToolTipText("");
+
         javax.swing.GroupLayout settings_fldigiPanelLayout = new javax.swing.GroupLayout(settings_fldigiPanel);
         settings_fldigiPanel.setLayout(settings_fldigiPanelLayout);
         settings_fldigiPanelLayout.setHorizontalGroup(
             settings_fldigiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settings_fldigiPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(settings_fldigidefaulthost, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(settings_fldigidefaultport, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(settings_editdefaultfldigi)
+                .addGroup(settings_fldigiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(settings_fldigiPanelLayout.createSequentialGroup()
+                        .addComponent(jCheckBox4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(settings_fldigiPanelLayout.createSequentialGroup()
+                        .addComponent(settings_fldigidefaulthost, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(settings_fldigidefaultport, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(settings_editdefaultfldigi)))
                 .addContainerGap(223, Short.MAX_VALUE))
         );
         settings_fldigiPanelLayout.setVerticalGroup(
@@ -347,22 +443,66 @@ public class mainform extends javax.swing.JFrame {
                     .addComponent(settings_fldigidefaulthost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(settings_fldigidefaultport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(settings_editdefaultfldigi))
-                .addContainerGap(535, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(settings_fldigiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(494, Short.MAX_VALUE))
         );
 
         settingsmenuPane.addTab("FLDIGI", new javax.swing.ImageIcon(getClass().getResource("/jssdv/monitor.png")), settings_fldigiPanel); // NOI18N
 
         settings_aprsPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        settings_iAPRSserver.setText("127.0.0.1");
+        settings_iAPRSserver.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "iAPRS-host:"));
+        settings_iAPRSserver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settings_iAPRSserverActionPerformed(evt);
+            }
+        });
+
+        settings_iAPRSport.setText("7362");
+        settings_iAPRSport.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Port:"));
+        settings_iAPRSport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settings_iAPRSportActionPerformed(evt);
+            }
+        });
+
+        settings_editdefaultfldigi1.setText("edit");
+        settings_editdefaultfldigi1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                settings_editdefaultfldigi1ItemStateChanged(evt);
+            }
+        });
+        settings_editdefaultfldigi1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                settings_editdefaultfldigi1StateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout settings_aprsPanelLayout = new javax.swing.GroupLayout(settings_aprsPanel);
         settings_aprsPanel.setLayout(settings_aprsPanelLayout);
         settings_aprsPanelLayout.setHorizontalGroup(
             settings_aprsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGroup(settings_aprsPanelLayout.createSequentialGroup()
+                .addComponent(settings_iAPRSserver, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(settings_iAPRSport, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(settings_editdefaultfldigi1)
+                .addGap(0, 233, Short.MAX_VALUE))
         );
         settings_aprsPanelLayout.setVerticalGroup(
             settings_aprsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 582, Short.MAX_VALUE)
+            .addGroup(settings_aprsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(settings_aprsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(settings_iAPRSserver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(settings_iAPRSport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(settings_editdefaultfldigi1))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
 
         settingsmenuPane.addTab("APRS", new javax.swing.ImageIcon(getClass().getResource("/jssdv/globe.png")), settings_aprsPanel); // NOI18N
@@ -498,7 +638,7 @@ public class mainform extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        settingsmenuPane.addTab("Modes", settings_modesPanel);
+        settingsmenuPane.addTab("Modes", new javax.swing.ImageIcon(getClass().getResource("/jssdv/folder-picture.png")), settings_modesPanel); // NOI18N
 
         settings_directoryPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -1076,6 +1216,26 @@ public class mainform extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void settings_iAPRSserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settings_iAPRSserverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_iAPRSserverActionPerformed
+
+    private void settings_iAPRSportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settings_iAPRSportActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_iAPRSportActionPerformed
+
+    private void settings_editdefaultfldigi1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_settings_editdefaultfldigi1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_editdefaultfldigi1ItemStateChanged
+
+    private void settings_editdefaultfldigi1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_settings_editdefaultfldigi1StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_editdefaultfldigi1StateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -1134,8 +1294,13 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
@@ -1145,7 +1310,9 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollBar jScrollBar2;
@@ -1162,11 +1329,13 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JSlider jSlider1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     private javax.swing.JTree jTree1;
     private javax.swing.JPanel overlayPanel;
     private javax.swing.JPanel rigPanel;
@@ -1179,10 +1348,13 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JPanel settings_aprsPanel;
     private javax.swing.JPanel settings_directoryPanel;
     private javax.swing.JToggleButton settings_editdefaultfldigi;
+    private javax.swing.JToggleButton settings_editdefaultfldigi1;
     private javax.swing.JPanel settings_fldigiPanel;
     private javax.swing.JTextField settings_fldigidefaulthost;
     private javax.swing.JTextField settings_fldigidefaultport;
     private javax.swing.JPanel settings_freqPanel;
+    private javax.swing.JTextField settings_iAPRSport;
+    private javax.swing.JTextField settings_iAPRSserver;
     private javax.swing.JPanel settings_modesPanel;
     private javax.swing.JTextField settingsdir;
     private javax.swing.JTabbedPane settingsmenuPane;

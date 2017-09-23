@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/systxstock.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE root SYSTEM "systxstock.dtd">
+
+    <root>
+    ...
+    </root>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT root (image)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT image (name|file|description|thumpnail)*>
+<!ATTLIST image
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT name (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT file EMPTY>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT description EMPTY>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT thumpnail EMPTY>

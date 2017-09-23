@@ -21,9 +21,51 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <mode name="plain SSDV">
         <short>pSSDV</short>
         <modem>RTTY</modem>
-        <modemoption></modemoption>
+        <center>1200</center>
+        <modemoptions>[shift=800,bits=8,parity=0,stop=1]</modemoptions>
         <headerrepeate>0</headerrepeat>
         <icon></icon>
-        <description></description>       
+        <description></description>
+        <datamodel>SSDV</datamodel>
+        <datastructure>
+            <fldigi><imgpayload></imgpayload></fldigi>    
+            
+        </datastructure>
+        <encode></encode>
+        <compression></compression>       
+    </mode>
+   <mode name="iSSDV">
+        <short>iSSDV</short>
+        <modem>[PSK500RC3,PSK1000R,PSK31]</modem>
+        <center>1200</center>
+        <modemoptions></modemoptions>
+        <headerrepeate>4</headerrepeat>
+        <icon></icon>
+        <description></description>
+        <datamodel>SSDV</datamodel>
+        <datastructure>           
+              <iAPRS>
+                  <txreminder></txreminder>
+                  
+              </iAPRS> 
+              <pskreporter>
+                  <rxrequinterval>15</rxrequinterval>
+              </pskreporter>
+            <block>    
+              <fldigi>
+                <header>
+                    <callsign></callsign>
+                    <optionaldata></optionaldata>
+                </header>
+                <encoding>
+                    <imgpayload></imgpayload>
+                </encoding> 
+              </fldigi>
+                                    
+            </block>
+            
+        </datastructure>
+        <encode>BASE64</encode>
+        <compression>4</compression>       
     </mode>
 </root>
