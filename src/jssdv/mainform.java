@@ -43,9 +43,11 @@ public class mainform extends javax.swing.JFrame {
         jCheckBox3 = new javax.swing.JCheckBox();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
+        tximage1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
         txPanel = new javax.swing.JPanel();
         tximgPane = new javax.swing.JTabbedPane();
         tximgPanel = new javax.swing.JPanel();
@@ -59,14 +61,15 @@ public class mainform extends javax.swing.JFrame {
         txList = new javax.swing.JList<>();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jProgressBar1 = new javax.swing.JProgressBar();
+        jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         settingsPanel = new javax.swing.JPanel();
         settingsmenuPane = new javax.swing.JTabbedPane();
         settings_fldigiPanel = new javax.swing.JPanel();
         settings_fldigidefaulthost = new javax.swing.JTextField();
         settings_fldigidefaultport = new javax.swing.JTextField();
         settings_editdefaultfldigi = new javax.swing.JToggleButton();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jTextField5 = new javax.swing.JTextField();
         settings_aprsPanel = new javax.swing.JPanel();
         settings_iAPRSserver = new javax.swing.JTextField();
         settings_iAPRSport = new javax.swing.JTextField();
@@ -97,6 +100,11 @@ public class mainform extends javax.swing.JFrame {
         settings_freqPanel = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel7 = new javax.swing.JPanel();
+        settings_logging_auto = new javax.swing.JCheckBox();
+        jTextField5 = new javax.swing.JTextField();
+        jSlider2 = new javax.swing.JSlider();
+        settings_logging_autosave = new javax.swing.JCheckBox();
         savesettings = new javax.swing.JButton();
         debugPanel = new javax.swing.JPanel();
         debugtext = new javax.swing.JTextField();
@@ -152,52 +160,64 @@ public class mainform extends javax.swing.JFrame {
 
         jCheckBox2.setText("enable RSID");
         jCheckBox2.setContentAreaFilled(false);
-        jCheckBox2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-out.png"))); // NOI18N
-        jCheckBox2.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-in.png"))); // NOI18N
-        jCheckBox2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/box-in.png"))); // NOI18N
+        jCheckBox2.setDisabledSelectedIcon(null);
 
         jCheckBox3.setText("respect Mode in HeaderData");
 
         jTabbedPane3.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
 
+        tximage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/no-image_320.png"))); // NOI18N
+        tximage1.setText("TXIMAGE");
+        tximage1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        tximage1.setPreferredSize(new java.awt.Dimension(320, 240));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 444, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(tximage1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 124, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 582, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(tximage1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 342, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Image reception", new javax.swing.ImageIcon(getClass().getResource("/jssdv/file-picture.png")), jPanel4); // NOI18N
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/no-image_320.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "NOCALL"));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Image-Blocks"));
+
+        jButton13.setText("send BSR");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 302, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 112, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton13))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("raw image", new javax.swing.ImageIcon(getClass().getResource("/jssdv/puzzle.png")), jPanel6); // NOI18N
@@ -258,6 +278,7 @@ public class mainform extends javax.swing.JFrame {
         jSlider1.setBorder(javax.swing.BorderFactory.createTitledBorder("Img-Size"));
         jSlider1.setOpaque(false);
 
+        tximage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/no-image_320.png"))); // NOI18N
         tximage.setText("TXIMAGE");
         tximage.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         tximage.setPreferredSize(new java.awt.Dimension(320, 240));
@@ -325,7 +346,7 @@ public class mainform extends javax.swing.JFrame {
             .addGap(0, 569, Short.MAX_VALUE)
         );
 
-        tximgPane.addTab("tab3", jPanel3);
+        tximgPane.addTab("Quick-CQ", jPanel3);
 
         txList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -343,6 +364,22 @@ public class mainform extends javax.swing.JFrame {
         jProgressBar1.setFocusable(false);
         jProgressBar1.setName(""); // NOI18N
 
+        jButton6.setText("edit");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("add Image");
+
+        jButton12.setText("delete");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout txPanelLayout = new javax.swing.GroupLayout(txPanel);
         txPanel.setLayout(txPanelLayout);
         txPanelLayout.setHorizontalGroup(
@@ -350,13 +387,21 @@ public class mainform extends javax.swing.JFrame {
             .addGroup(txPanelLayout.createSequentialGroup()
                 .addGroup(txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(txPanelLayout.createSequentialGroup()
-                        .addGroup(txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTabbedPane1)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTabbedPane1)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE))
+                            .addGroup(txPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton12)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                         .addComponent(tximgPane, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 7, Short.MAX_VALUE))
         );
         txPanelLayout.setVerticalGroup(
             txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,6 +411,12 @@ public class mainform extends javax.swing.JFrame {
                     .addGroup(txPanelLayout.createSequentialGroup()
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton12)
+                            .addGroup(txPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton11)
+                                .addComponent(jButton6)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -406,33 +457,17 @@ public class mainform extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox4.setText("autolog on reception");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
-            }
-        });
-
-        jTextField5.setText("75");
-        jTextField5.setToolTipText("");
-
         javax.swing.GroupLayout settings_fldigiPanelLayout = new javax.swing.GroupLayout(settings_fldigiPanel);
         settings_fldigiPanel.setLayout(settings_fldigiPanelLayout);
         settings_fldigiPanelLayout.setHorizontalGroup(
             settings_fldigiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settings_fldigiPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(settings_fldigiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(settings_fldigiPanelLayout.createSequentialGroup()
-                        .addComponent(jCheckBox4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(settings_fldigiPanelLayout.createSequentialGroup()
-                        .addComponent(settings_fldigidefaulthost, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(settings_fldigidefaultport, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(settings_editdefaultfldigi)))
+                .addComponent(settings_fldigidefaulthost, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(settings_fldigidefaultport, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(settings_editdefaultfldigi)
                 .addContainerGap(223, Short.MAX_VALUE))
         );
         settings_fldigiPanelLayout.setVerticalGroup(
@@ -443,11 +478,7 @@ public class mainform extends javax.swing.JFrame {
                     .addComponent(settings_fldigidefaulthost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(settings_fldigidefaultport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(settings_editdefaultfldigi))
-                .addGap(18, 18, 18)
-                .addGroup(settings_fldigiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(494, Short.MAX_VALUE))
+                .addContainerGap(535, Short.MAX_VALUE))
         );
 
         settingsmenuPane.addTab("FLDIGI", new javax.swing.ImageIcon(getClass().getResource("/jssdv/monitor.png")), settings_fldigiPanel); // NOI18N
@@ -786,6 +817,65 @@ public class mainform extends javax.swing.JFrame {
         );
 
         settingsmenuPane.addTab("Frequencies", new javax.swing.ImageIcon(getClass().getResource("/jssdv/file-text.png")), settings_freqPanel); // NOI18N
+
+        settings_logging_auto.setText("autolog on reception");
+        settings_logging_auto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settings_logging_autoActionPerformed(evt);
+            }
+        });
+        settings_logging_auto.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                settings_logging_autoPropertyChange(evt);
+            }
+        });
+
+        jTextField5.setText("75");
+        jTextField5.setToolTipText("");
+        jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "min. % for autosave"));
+
+        settings_logging_autosave.setText("autosave on reception");
+        settings_logging_autosave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settings_logging_autosaveActionPerformed(evt);
+            }
+        });
+        settings_logging_autosave.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                settings_logging_autosavePropertyChange(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(settings_logging_auto)
+                    .addComponent(settings_logging_autosave))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(484, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(settings_logging_auto))
+                .addGap(5, 5, 5)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(settings_logging_autosave))
+                .addContainerGap(511, Short.MAX_VALUE))
+        );
+
+        settingsmenuPane.addTab("Logging", new javax.swing.ImageIcon(getClass().getResource("/jssdv/tag.png")), jPanel7); // NOI18N
 
         savesettings.setText("Save Settings");
 
@@ -1216,9 +1306,9 @@ public class mainform extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void settings_logging_autoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settings_logging_autoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_settings_logging_autoActionPerformed
 
     private void settings_iAPRSserverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settings_iAPRSserverActionPerformed
         // TODO add your handling code here:
@@ -1235,6 +1325,26 @@ public class mainform extends javax.swing.JFrame {
     private void settings_editdefaultfldigi1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_settings_editdefaultfldigi1StateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_settings_editdefaultfldigi1StateChanged
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void settings_logging_autoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_settings_logging_autoPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_logging_autoPropertyChange
+
+    private void settings_logging_autosaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settings_logging_autosaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_logging_autosaveActionPerformed
+
+    private void settings_logging_autosavePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_settings_logging_autosavePropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settings_logging_autosavePropertyChange
 
     /**
      * @param args the command line arguments
@@ -1286,17 +1396,20 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JTextField fldigiport;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1313,6 +1426,7 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollBar jScrollBar2;
@@ -1327,6 +1441,7 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSlider jSlider1;
+    private javax.swing.JSlider jSlider2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -1355,6 +1470,8 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JPanel settings_freqPanel;
     private javax.swing.JTextField settings_iAPRSport;
     private javax.swing.JTextField settings_iAPRSserver;
+    private javax.swing.JCheckBox settings_logging_auto;
+    private javax.swing.JCheckBox settings_logging_autosave;
     private javax.swing.JPanel settings_modesPanel;
     private javax.swing.JTextField settingsdir;
     private javax.swing.JTabbedPane settingsmenuPane;
@@ -1365,6 +1482,7 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JPanel txPanel;
     private javax.swing.JToggleButton txidButton;
     private javax.swing.JLabel tximage;
+    private javax.swing.JLabel tximage1;
     private javax.swing.JTabbedPane tximgPane;
     private javax.swing.JPanel tximgPanel;
     private javax.swing.JTextField txlogdir;
