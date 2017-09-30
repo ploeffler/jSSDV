@@ -34,6 +34,7 @@ public class mainform extends javax.swing.JFrame {
         dirChooser = new javax.swing.JFileChooser();
         buttonGroup1 = new javax.swing.ButtonGroup();
         dirChooser1 = new javax.swing.JFileChooser();
+        logging_mechanism = new javax.swing.ButtonGroup();
         topPane = new javax.swing.JTabbedPane();
         rxPanel = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -102,9 +103,10 @@ public class mainform extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         settings_logging_auto = new javax.swing.JCheckBox();
-        jTextField5 = new javax.swing.JTextField();
         jSlider2 = new javax.swing.JSlider();
         settings_logging_autosave = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
         savesettings = new javax.swing.JButton();
         debugPanel = new javax.swing.JPanel();
         debugtext = new javax.swing.JTextField();
@@ -819,6 +821,7 @@ public class mainform extends javax.swing.JFrame {
         settingsmenuPane.addTab("Frequencies", new javax.swing.ImageIcon(getClass().getResource("/jssdv/file-text.png")), settings_freqPanel); // NOI18N
 
         settings_logging_auto.setText("autolog on reception");
+        settings_logging_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-off.png"))); // NOI18N
         settings_logging_auto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 settings_logging_autoActionPerformed(evt);
@@ -830,9 +833,12 @@ public class mainform extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.setText("75");
-        jTextField5.setToolTipText("");
-        jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "min. % for autosave"));
+        jSlider2.setMajorTickSpacing(25);
+        jSlider2.setMinorTickSpacing(10);
+        jSlider2.setPaintLabels(true);
+        jSlider2.setPaintTicks(true);
+        jSlider2.setSnapToTicks(true);
+        jSlider2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "min. % for auto save/log"));
 
         settings_logging_autosave.setText("autosave on reception");
         settings_logging_autosave.addActionListener(new java.awt.event.ActionListener() {
@@ -846,6 +852,18 @@ public class mainform extends javax.swing.JFrame {
             }
         });
 
+        logging_mechanism.add(jCheckBox4);
+        jCheckBox4.setText("use FLDIGI-logging");
+        jCheckBox4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-off.png"))); // NOI18N
+        jCheckBox4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
+        jCheckBox4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
+
+        logging_mechanism.add(jCheckBox5);
+        jCheckBox5.setText("write ADIF-file");
+        jCheckBox5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-off.png"))); // NOI18N
+        jCheckBox5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
+        jCheckBox5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -855,24 +873,30 @@ public class mainform extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(settings_logging_auto)
                     .addComponent(settings_logging_autosave))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox4))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(settings_logging_auto))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(settings_logging_autosave))
-                .addContainerGap(511, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jCheckBox4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox5))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jSlider2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                            .addComponent(settings_logging_auto)
+                            .addGap(20, 20, 20)
+                            .addComponent(settings_logging_autosave))))
+                .addContainerGap(506, Short.MAX_VALUE))
         );
 
         settingsmenuPane.addTab("Logging", new javax.swing.ImageIcon(getClass().getResource("/jssdv/tag.png")), jPanel7); // NOI18N
@@ -1410,6 +1434,8 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1450,8 +1476,8 @@ public class mainform extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTree jTree1;
+    private javax.swing.ButtonGroup logging_mechanism;
     private javax.swing.JPanel overlayPanel;
     private javax.swing.JPanel rigPanel;
     private javax.swing.JPanel rxPanel;
