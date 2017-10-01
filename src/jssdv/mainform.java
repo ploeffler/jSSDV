@@ -822,6 +822,8 @@ public class mainform extends javax.swing.JFrame {
 
         settings_logging_auto.setText("autolog on reception");
         settings_logging_auto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-off.png"))); // NOI18N
+        settings_logging_auto.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
+        settings_logging_auto.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
         settings_logging_auto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 settings_logging_autoActionPerformed(evt);
@@ -841,6 +843,8 @@ public class mainform extends javax.swing.JFrame {
         jSlider2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "min. % for auto save/log"));
 
         settings_logging_autosave.setText("autosave on reception");
+        settings_logging_autosave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-off.png"))); // NOI18N
+        settings_logging_autosave.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/jssdv/switch-on.png"))); // NOI18N
         settings_logging_autosave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 settings_logging_autosaveActionPerformed(evt);
@@ -879,7 +883,7 @@ public class mainform extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox5)
                     .addComponent(jCheckBox4))
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(294, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -896,7 +900,7 @@ public class mainform extends javax.swing.JFrame {
                             .addComponent(settings_logging_auto)
                             .addGap(20, 20, 20)
                             .addComponent(settings_logging_autosave))))
-                .addContainerGap(506, Short.MAX_VALUE))
+                .addContainerGap(489, Short.MAX_VALUE))
         );
 
         settingsmenuPane.addTab("Logging", new javax.swing.ImageIcon(getClass().getResource("/jssdv/tag.png")), jPanel7); // NOI18N
