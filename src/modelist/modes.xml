@@ -18,31 +18,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 <root>
-    <mode name="plain SSDV">
+    <mode name="plainSSDV" editable="false">
         <short>pSSDV</short>
-        <modem>RTTY</modem>
-        <center>1200</center>
-        <modemoptions>[shift=800,bits=8,parity=0,stop=1]</modemoptions>
-        <headerrepeate>0</headerrepeat>
-        <icon></icon>
-        <description></description>
-        <datamodel>SSDV</datamodel>
-        <datastructure>
-            <fldigi><imgpayload></imgpayload></fldigi>    
+        <modem editable="false">[RTTY]</modem>
+        <center editable="false">1200</center>
+        <modemoptions editable="false">[shift=800,bits=8,parity=0,stop=1]</modemoptions>
+        <headerrepeate editable="false">0</headerrepeate>
+        <icon editable="false"></icon>
+        <description editable="false">Pure SSDV decoding (Callsign is included in the data), no other headers or data are send.</description>
+        <datastructure editable="false">
+            <fldigi><imgpayload type="SSDV"></imgpayload></fldigi>    
             
         </datastructure>
-        <encode></encode>
-        <compression></compression>       
+        
+        <compression editable="true">4</compression> 
+              
     </mode>
-   <mode name="iSSDV">
-        <short>iSSDV</short>
-        <modem>[PSK500RC3,PSK1000R,PSK31]</modem>
-        <center>1200</center>
-        <modemoptions></modemoptions>
-        <headerrepeate>4</headerrepeat>
+   <mode name="jSSDV-narrow" editable="false">
+        <short editable="false">jSSDV-n</short>
+        <modem>[PSK500R,PSK125,PSK250]</modem>
+        <center>1700</center>
+        <modemoptions editable="false"></modemoptions>
+        <headerrepeate>4</headerrepeate>
         <icon></icon>
         <description></description>
-        <datamodel>SSDV</datamodel>
+       
         <datastructure>           
               <iAPRS>
                   <txreminder></txreminder>
@@ -58,14 +58,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <optionaldata></optionaldata>
                 </header>
                 <encoding>
-                    <imgpayload></imgpayload>
+                    <imgpayload type="SSDV"></imgpayload>
                 </encoding> 
               </fldigi>
                                     
             </block>
             
         </datastructure>
-        <encode>BASE64</encode>
-        <compression>4</compression>       
+        
+        <compression editable="false">4</compression>       
     </mode>
+    
+    
+   
 </root>

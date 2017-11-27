@@ -41,6 +41,8 @@ public class editTxstockimage extends javax.swing.JDialog {
 
     /**
      * Creates new form editTxstockimage
+     * @param parent
+     * @param modal
      */
     public editTxstockimage(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

@@ -5,6 +5,11 @@
  */
 package jssdv;
 
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.stream.XMLStreamException;
+
 /**
  *
  * @author User
@@ -460,7 +465,13 @@ public class JSSDV extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainform().setVisible(true);
+                try {
+                    new mainform().setVisible(true);
+                } catch (XMLStreamException ex) {
+                    Logger.getLogger(JSSDV.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(JSSDV.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

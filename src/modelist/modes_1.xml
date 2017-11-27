@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 2017 User
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<root>
+    <mode name="plainSSDV" editable="false">
+        <short>pSSDV</short>
+        <modem editable="false">RTTY</modem>
+        <center editable="false">1200</center>
+        <modemoptions editable="false">[shift=800,bits=8,parity=0,stop=1]</modemoptions>
+        <headerrepeate editable="false">0</headerrepeate>
+        <icon></icon>
+        <description></description>
+        <datamodel editable="false">SSDV</datamodel>
+        <datastructure>
+            <fldigi><imgpayload></imgpayload></fldigi>    
+            
+        </datastructure>
+        <encode></encode>
+        <compression></compression> 
+              
+    </mode>
+   <mode name="jSSDV-n">
+        <short>jSSDV</short>
+        <modem>[PSK500RC3,PSK1000R,PSK31]</modem>
+        <center>1200</center>
+        <modemoptions></modemoptions>
+        <headerrepeate>4</headerrepeate>
+        <icon></icon>
+        <description></description>
+        <datamodel>SSDV</datamodel>
+        <datastructure>           
+              <iAPRS>
+                  <txreminder></txreminder>
+                  
+              </iAPRS> 
+              <pskreporter>
+                  <rxrequinterval>15</rxrequinterval>
+              </pskreporter>
+            <block>    
+              <fldigi>
+                <header>
+                    <callsign></callsign>
+                    <optionaldata></optionaldata>
+                </header>
+                <encoding>
+                    <imgpayload></imgpayload>
+                </encoding> 
+              </fldigi>
+                                    
+            </block>
+            
+        </datastructure>
+        <encode>BASE32</encode>
+        <compression>4</compression>       
+    </mode>
+    <mode name="jSSDV-w">
+        <short>jSSDV</short>
+        <modem>[PSK500RC3,PSK1000R,PSK31]</modem>
+        <center>1200</center>
+        <modemoptions></modemoptions>
+        <headerrepeate>4</headerrepeate>
+        <icon></icon>
+        <description></description>
+        <datamodel>SSDV</datamodel>
+        <datastructure>           
+              <iAPRS>
+                  <txreminder></txreminder>
+                  
+              </iAPRS> 
+              <pskreporter>
+                  <rxrequinterval>15</rxrequinterval>
+              </pskreporter>
+            <block>    
+              <fldigi>
+                <header>
+                    <callsign></callsign>
+                    <optionaldata></optionaldata>
+                </header>
+                <encoding>
+                    <imgpayload></imgpayload>
+                </encoding> 
+              </fldigi>
+                                    
+            </block>
+            
+        </datastructure>
+        <encode>BASE64</encode>
+        <compression>4</compression>       
+    </mode>
+</root>
